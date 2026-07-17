@@ -1,0 +1,308 @@
+/**
+ * Drawer and Sidebar styles
+ */
+
+/* Sidebar */
+.sidebar {
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.sidebar-header {
+    padding: var(--spacing-md);
+    border-bottom: 1px solid var(--border);
+    background: var(--primary-color);
+    color: white;
+}
+
+.sidebar-content {
+    flex: 1;
+    padding: var(--spacing-md);
+    overflow-y: auto;
+}
+
+.sidebar-footer {
+    padding: var(--spacing-md);
+    border-top: 1px solid var(--border);
+}
+
+/* Details Panel */
+.details-panel {
+    background: var(--surface);
+    border-left: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.details-panel-header {
+    padding: var(--spacing-md);
+    border-bottom: 1px solid var(--border);
+    background: var(--background);
+}
+
+.details-panel-content {
+    flex: 1;
+    padding: var(--spacing-md);
+    overflow-y: auto;
+}
+
+/* Modal Dialog */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal {
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    max-width: 90%;
+    max-height: 90vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    padding: var(--spacing-md);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.modal-close {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 24px;
+    line-height: 1;
+    color: var(--text-secondary);
+    transition: var(--transition);
+}
+
+.modal-close:hover {
+    color: var(--text-primary);
+    transform: scale(1.1);
+}
+
+.modal-body {
+    flex: 1;
+    padding: var(--spacing-md);
+    overflow-y: auto;
+}
+
+.modal-footer {
+    padding: var(--spacing-md);
+    border-top: 1px solid var(--border);
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: flex-end;
+}
+
+/* Drawer Overlay */
+.drawer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    animation: fadeIn 0.2s ease;
+}
+
+/* Drawer (slide-in panel) */
+.drawer {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 500px;
+    background: white;
+    box-shadow: -2px 0 12px rgba(0, 0, 0, 0.15);
+    z-index: 2001;
+    display: flex;
+    flex-direction: column;
+}
+
+.drawer-left {
+    left: 0;
+    animation: slideInLeft 0.3s ease-out;
+}
+
+.drawer-right {
+    right: 0;
+    animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.drawer-header {
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid #e0e0e0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    flex-shrink: 0;
+}
+
+.drawer-header h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.drawer-close {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 1;
+    color: white;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.drawer-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.drawer-body {
+    padding: var(--spacing-lg);
+    flex: 1;
+    overflow-y: auto;
+    background: #fafafa;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .drawer {
+        width: 90%;
+    }
+
+    .modal {
+        max-width: 95%;
+    }
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+ * ConfirmDialog
+ * Themed replacement for window.confirm(). The overlay is a flexbox
+ * centring container; the dialog itself is a card with two action
+ * buttons and an optional danger variant for destructive actions.
+ * ──────────────────────────────────────────────────────────────────── */
+
+.confirm-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+
+.confirm-dialog {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    max-width: 480px;
+    width: 100%;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.confirm-dialog--danger {
+    border-top: 4px solid var(--severity-high-bg, #dc2626);
+}
+
+.confirm-message {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--text-primary, #1c1917);
+    white-space: pre-wrap;
+}
+
+.confirm-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.btn-danger {
+    background: var(--severity-high-bg, #dc2626);
+    color: var(--severity-high-fg, #fff);
+    border-color: var(--severity-high-bg, #dc2626);
+}
+
+.btn-danger:hover {
+    background: var(--severity-critical-bg, #7f1d1d);
+    border-color: var(--severity-critical-bg, #7f1d1d);
+}
+
+.confirm-fade-enter-active,
+.confirm-fade-leave-active { transition: opacity 0.12s ease; }
+.confirm-fade-enter-from,
+.confirm-fade-leave-to     { opacity: 0; }

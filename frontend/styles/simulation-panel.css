@@ -1,0 +1,240 @@
+/**
+ * Deterioration Model Card & Gauge Styles
+ * Styles for Lifetime Multiplier card, Mould Risk card, and model toggle UI
+ */
+
+/* ── Deterioration Model Cards ─────────────────────────────── */
+
+.deterioration-card {
+    margin-top: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.deterioration-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background: #f8f9fa;
+    font-size: 12px;
+    font-weight: 600;
+    color: #444;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.deterioration-card-body {
+    padding: 10px 12px;
+}
+
+.deterioration-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+/* Lifetime multiplier */
+.lifetime-value {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.lifetime-label {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* Mould gauge */
+.mould-gauge-track {
+    position: relative;
+    height: 10px;
+    background: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.mould-gauge-fill {
+    height: 100%;
+    border-radius: 5px;
+    transition: width 0.3s ease, background 0.3s ease;
+}
+
+.mould-gauge-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2px;
+    font-size: 9px;
+    color: #aaa;
+    padding: 0 2px;
+}
+
+/* Salt damage gauge */
+.salt-damage-track {
+    position: relative;
+    height: 10px;
+    background: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.salt-damage-fill {
+    height: 100%;
+    border-radius: 5px;
+    transition: width 0.3s ease, background 0.3s ease;
+}
+
+/* Model toggles */
+.model-toggles {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 10px 0;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 12px;
+}
+
+.model-toggle-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    user-select: none;
+    color: #555;
+}
+
+.model-toggle-label input[type="checkbox"] {
+    cursor: pointer;
+    width: 14px;
+    height: 14px;
+    accent-color: #667eea;
+}
+
+/* ── Model Parameter Configuration ──────────────────────────── */
+
+.param-config {
+    border-top: 1px solid #eee;
+    padding: 8px 0 4px;
+    margin-top: 8px;
+}
+
+.param-config-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 12px;
+}
+
+.param-field {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.param-field label {
+    font-size: 10px;
+    color: #666;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.param-field input[type="number"] {
+    width: 100%;
+    padding: 3px 6px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 11px;
+    font-family: monospace;
+    background: #fff;
+    color: #333;
+}
+
+.param-field input[type="number"]:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.15);
+}
+
+.param-reset-btn {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 2px 8px;
+    font-size: 10px;
+    color: #667eea;
+    background: none;
+    border: 1px solid #667eea;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.param-reset-btn:hover {
+    background: #667eea;
+    color: white;
+}
+
+.config-toggle-btn {
+    padding: 1px 6px;
+    font-size: 10px;
+    color: #888;
+    background: none;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.config-toggle-btn:hover {
+    border-color: #667eea;
+    color: #667eea;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .deterioration-card {
+        border-color: #555;
+    }
+
+    .deterioration-card-header {
+        background: #333;
+        color: #ddd;
+        border-bottom-color: #555;
+    }
+
+    .deterioration-card-body {
+        color: #ccc;
+    }
+
+    .mould-gauge-track,
+    .salt-damage-track {
+        background: #444;
+    }
+
+    .model-toggle-label {
+        color: #ccc;
+    }
+
+    .param-config {
+        border-top-color: #444;
+    }
+
+    .param-field label {
+        color: #aaa;
+    }
+
+    .param-field input[type="number"] {
+        background: #2a2a2a;
+        border-color: #555;
+        color: #ddd;
+    }
+
+    .config-toggle-btn {
+        color: #aaa;
+        border-color: #555;
+    }
+}

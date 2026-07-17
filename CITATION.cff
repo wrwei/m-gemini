@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite both the software and the paper below."
+title: "m-gemini: A Model-Based Digital Twin Framework for Polychrome Heritage Sculpture"
+authors:
+  - family-names: Tian
+    given-names: Yuan
+    affiliation: Northeast Forestry University
+  - family-names: Wei
+    given-names: Ran
+    affiliation: Lancaster University
+  - family-names: Zhang
+    given-names: Jun
+    affiliation: Northeast Forestry University
+  - family-names: Zhang
+    given-names: Xiwan
+    affiliation: Northeast Forestry University
+  - family-names: Hu
+    given-names: Wenbin
+    affiliation: Northeast Forestry University
+  - family-names: Zhu
+    given-names: Le
+    affiliation: Tsinghua University
+license: MIT
+repository-code: "https://github.com/wrwei/m-gemini"
+preferred-citation:
+  type: article
+  title: "A Model-Based Digital Twin for Predicting Deterioration of Mogao Polychrome Sculpture"
+  authors:
+    - family-names: Tian
+      given-names: Yuan
+    - family-names: Wei
+      given-names: Ran
+    - family-names: Zhang
+      given-names: Jun
+    - family-names: Zhang
+      given-names: Xiwan
+    - family-names: Hu
+      given-names: Wenbin
+    - family-names: Zhu
+      given-names: Le
+  journal: "npj Heritage Science"
+  year: 2026
+  notes: "DOI to be added on acceptance."

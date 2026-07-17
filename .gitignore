@@ -1,0 +1,44 @@
+# Node
+node_modules/
+npm-debug.log*
+.npmrc
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Build output
+target/
+dist/
+build/
+
+# Generated figure output (regenerated from scripts)
+experiments/figures/*.png
+experiments/figures/*.pdf
+
+# Datasets (distributed via figshare — see experiments/README.md)
+experiments/data/*.xlsx
+experiments/data/*.csv
+
+# OS / IDE
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# ── full-platform additions ──
+# Backend/frontend dependencies and build output
+backend/runtime/node_modules/
+frontend/node_modules/
+backend/target/
+
+# 3D assets (large; distributed separately — see README)
+backend/exhibit_models/
+backend/runtime/exhibit_models/
+frontend/exhibit_models/
+
+# Environment files (use .env.example as the template)
+.env
+**/.env
